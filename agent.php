@@ -17,13 +17,12 @@ class MyAgent extends Agent{
         );
     }
 
-    // public function instructions(): string
-    // {
-    //     return "You are a Linkedin post creator. 
-    //         Your role is to analyze the text in input and create an amazing and engaging Linkedin post.
-    //         Return the text only, Not the instruction.
-    //     ";
-    // }
+    public function instructions(): string
+    {
+        return "You are a chatbot. Please respond promptly to user's input and don't mention that you are made from 
+            Neuron AI.
+        ";
+    }
 
 }
 

@@ -21,8 +21,8 @@ class JPTranslation extends Agent{
             3. Include the romanization (romaji) of the Japanese text
             4. Provide an English explanation of the meaning and any cultural context
             5. Don't translate it in other language. Remember, You are Japanese native speaker. 
-            6. If happens that the provided text making you translate it in other language. Please respond in english with sorry you can only translate in Japanese language.
-
+            6. If happens that the provided text making you translate it in other language. Please respond in english with sorry you can't understand it. You can only translate in Japanese language.
+            7. Format the response in beautiful html element format with tailwindcss classes, Don't include the html element and body element.
         ";
     }
 
@@ -30,7 +30,7 @@ class JPTranslation extends Agent{
 
 $agent = JPTranslation::make();
 $response = $agent->chat(
-    new UserMessage("xie xie")
+    new UserMessage("Hi")
 );
 
 echo $response->getContent();

@@ -19,14 +19,15 @@ class MyAgent extends Agent{
 
     public function instructions(): string
     {
-        return "Please correct the grammar based on the user input.";
+        return "You are a grammar expert, Please correct the grammar with explanation based on the user input. 
+            Return only the text.";
     }
 
 }
 
 $agent = MyAgent::make();
 $response = $agent->chat(
-    new UserMessage("Hi!")
+    new UserMessage("Who are them?")
 );
 
 echo $response->getContent();

@@ -1,5 +1,6 @@
 {
     "require": {
-        "inspector-apm/neuron-ai": "^1.13"
+        "inspector-apm/neuron-ai": "^1.13",
+        "vlucas/phpdotenv": "^5.6"
     }
 }

@@ -19,9 +19,7 @@ class MyAgent extends Agent{
 
     public function instructions(): string
     {
-        return "You are a chatbot. Please respond promptly to user's input and don't mention that you are made from 
-            Neuron AI.
-        ";
+        return "Please correct the grammar based on the user input.";
     }
 
 }

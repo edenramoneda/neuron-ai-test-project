@@ -1,44 +1,17 @@
 <?php 
 
-
-
   use NeuronAI\Chat\Messages\UserMessage;
-  use NeuronAI\Agent;
 
-  require_once './ProviderTrait.php';
+  require "./jp_translation.php";
   require "./vendor/autoload.php";
 
-  $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
-  $dotenv->load();
-
-
-  class JPTranslation extends Agent{
-      
-    use ProviderTrait;
-
-    public $test = "hello";
-
-    
-    public function instructions(): string
-    {
-        return "You are translating as a Japanese native speaker that can understand english fluently. When I provide text, please:
-            1. Translate it into natural Japanese
-            2. Provide the Japanese text in its standard written form (using the appropriate mix of hiragana, katakana, and kanji as a native speaker would)
-            3. Include the romanization (romaji) of the Japanese text
-            4. Provide an English explanation of the meaning and any cultural context
-            5. Don't translate it in other language. Remember, You are Japanese native speaker. 
-            6. If happens that the provided text making you translate it in other language. Please respond in english with sorry you can't understand it. You can only translate in Japanese language.
-            7. Format the response in beautiful html element format with tailwindcss classes, Don't include the html element and body element.
-        ";
-    }
-  }
-
+  session_start();
 
    $translation = '';
    $error = '';
    $inputText = '';
 
-   session_start();
+
 
   // Handle form submission
   if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['text_input'])) {
@@ -76,21 +49,6 @@
 
 
    session_unset();
-
-   function renderSafeHTML($content) {
-      // Define allowed HTML tags
-      $allowedTags = '<p><br><strong><em><b><i><u><span><div><h1><h2><h3><h4><h5><h6><ul><ol><li><blockquote>';
-      
-      // Remove potentially dangerous tags but keep formatting
-      $sanitized = strip_tags($content, $allowedTags);
-      
-      // If no HTML tags remain after sanitization, treat as plain text
-      if (strip_tags($sanitized) === $sanitized) {
-          return nl2br(htmlspecialchars($content, ENT_QUOTES));
-      }
-      
-      return $sanitized;
-  }
 
 
 

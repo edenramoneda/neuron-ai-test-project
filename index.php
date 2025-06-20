@@ -47,7 +47,21 @@
    $translation = $_SESSION['translation'] ?? '';
    $error = $_SESSION['error'] ?? '';
 
+    function formatText($content){
+      $items = array_filter(explode('*', $content), 'trim');
 
+
+      $fixedFormat = "<ul class='pl-3 list-disc'>\n";
+      foreach ($items as $item) {
+          $item = trim($item); // Remove extra whitespace
+          if (!empty($item)) {
+              $fixedFormat .= "    <li>" . htmlspecialchars($item) . "</li>\n";
+          }
+      }
+      $fixedFormat .= "</ul>";
+
+      return $fixedFormat;
+    }
    session_unset();
 
 
@@ -141,7 +155,13 @@
             </div>
 
             <div class="response mt-8 text-left text-neutral bg-gray-800 p-3">
-              <span class="text-neutral"><?php echo $translation; ?></span>
+              <span class="text-neutral">
+
+                  <?php
+                    echo formatText($translation)
+                  ?>
+
+              </span>
             </div>
           <?php endif; ?>
 

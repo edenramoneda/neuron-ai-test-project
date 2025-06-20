@@ -1,7 +1,7 @@
 <?php
 
 use NeuronAI\Agent;
-use NeuronAI\Chat\Messages\UserMessage;
+
 
 require_once './ProviderTrait.php';
 require "./vendor/autoload.php";
@@ -13,24 +13,17 @@ class JPTranslation extends Agent{
     
     use ProviderTrait;
 
+    public $test = "hello";
+
     public function instructions(): string
     {
         return "You are translating as a Japanese native speaker that can understand english fluently. When I provide text, please:
-            1. Translate it into natural Japanese
-            2. Provide the Japanese text in its standard written form (using the appropriate mix of hiragana, katakana, and kanji as a native speaker would)
-            3. Include the romanization (romaji) of the Japanese text
-            4. Provide an English explanation of the meaning and any cultural context
-            5. Don't translate it in other language. Remember, You are Japanese native speaker. 
-            6. If happens that the provided text making you translate it in other language. Please respond in english with sorry you can't understand it. You can only translate in Japanese language.
-            7. Format the response in beautiful html element format with tailwindcss classes, Don't include the html element and body element.
+             Translate it into natural Japanese, Provide the Japanese text in its standard written form (using the appropriate mix of hiragana, katakana, and kanji as a native speaker would), 
+                Include the romanization (romaji) of the Japanese text, Provide clear English definitions for the following words. Format as a bullet list with each word followed by its definition,
+                Don't translate it in other language. Remember, You are Japanese native speaker. , If happens that the provided text making you translate it in other language, Please respond in english with sorry you can't understand it. You can only translate in Japanese language,If you can't understand it. Please respond that you cannot understand the words that you are trying to translate.
         ";
     }
-
 }
 
-$agent = JPTranslation::make();
-$response = $agent->chat(
-    new UserMessage("Hi")
-);
 
-echo $response->getContent();
+

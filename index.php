@@ -154,7 +154,7 @@
                 explore the LLMs and ADKs.
             </span><br>
             <span class="mt-3 text-gray-400 text-sm">
-                The translation provides Natural Japanese, written form, English explanation with cultural context.
+              The translation provides natural Japanese in both spoken and written forms, along with a breakdown of the meaning of each word.
             </span>
         </p>
       

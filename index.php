@@ -163,7 +163,7 @@
       <form method="POST" action.prevent="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">
         <div class="bg-gray-900 bg-opacity-80 backdrop-blur-sm p-8 rounded-lg shadow-lg border border-gray-800 
         w-full max-w-2xl">
-          <h2 class="text-white text-lg font-semibold mb-4">Please enter the words to translate </h2>
+          <h2 class="text-white text-lg font-semibold mb-4">Please enter the text to translate </h2>
           <input
             type="text"
             name="text_input"
@@ -176,6 +176,12 @@
           </form>
       
           <?php if ($inputText && $translation): ?>
+
+            <div class="response mt-8 text-left text-neutral bg-gray-800 p-3">
+              <div class="font-semibold">Words to translate</div>
+              <span class="text-neutral"><?php echo $inputText; ?></span>
+            </div>
+
             <div class="response mt-8 text-left text-neutral bg-gray-800 p-3">
               <span class="text-neutral"><?php echo $translation; ?></span>
             </div>

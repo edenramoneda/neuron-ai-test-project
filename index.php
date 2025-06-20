@@ -177,7 +177,7 @@
       
           <?php if ($inputText && $translation): ?>
             <div class="response mt-8 text-left text-neutral bg-gray-800 p-3">
-              <?php echo $translation; ?>
+              <span class="text-neutral"><?php echo $translation; ?></span>
             </div>
           <?php endif; ?>
 

@@ -150,7 +150,7 @@
         <p class="text-gray-400 mb-8 text-xl font-semibold">
             Translate to Japanese<br>
             <span class="mt-3 text-gray-400 text-sm">
-                This is a simple translation app built with Neuron AI using one of the Gemini model gemini-2.5-flash as I 
+                This is a very simple translation app built with Neuron AI using one of the Gemini model gemini-2.5-flash as I 
                 explore the LLMs and ADKs.
             </span><br>
             <span class="mt-3 text-gray-400 text-sm">

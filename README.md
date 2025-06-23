@@ -1,4 +1,4 @@
-# JP Translation
+# JP Language Translator Agent
 
 This is a very simple translation app built using Neuron AI and Google's Gemini 2.5 Flash model while exploring LLMs and ADKs. 
 The app provides natural Japanese translations in both spoken and written forms, complete with word-by-word breakdowns to help understand the meaning of each word.
